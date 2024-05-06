@@ -1,0 +1,53 @@
+@import "./variables.scss";
+.head_p{
+    font-family: $IntroDemo_BLack;
+    font-size: 32px;
+}
+.after_p{
+    margin-top: 25px;
+    width: 100%;
+    font-family: $FiraSans;
+}
+.block_head{
+    margin-top: 70px;
+}
+.middle_block, .third_block, .block_head, .fourth_block, .fifth_block{
+    text-align: center;
+    margin-top: 75px;
+    line-height: 160%;
+    img{
+        object-fit: cover;
+        margin-top: 35px;
+        width: 100%;
+    }
+}
+.fifth_block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .button_tovar{
+        margin-top: 35px;
+        margin-bottom: -10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 20px;
+        width: 255px;
+        height: 49px;
+        background: #FF8080;
+        border-radius: 15px;
+        font-family: $IntroDemo_BLack;
+        }
+}
+
+@media (max-width:350px){
+    .nav-menu{
+margin-right: 0;
+    }
+    .head_p{
+        font-size: 28px;
+    }
+    main{
+        margin: 20px auto;
+    }
+}

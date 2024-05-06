@@ -1,0 +1,98 @@
+@import './variables.scss';
+@mixin points{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    list-style-type: none;
+    transition: .3s;
+  
+    .button-reg {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 11px 10px;
+      width: 157px;
+      height: 40px;
+      background: #ff8080;
+      border-radius: 15px;
+    }
+    li {
+      padding:25px;
+      &:last-child{
+        padding-bottom: 40px;
+      }
+    }
+    a {
+      &:hover {
+        box-shadow: 0px 2px 0px 0px red;
+      }
+    }
+}
+
+@mixin footer_mix{
+    font-family: $FiraSans;
+    background-color: #e5ddc5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 230px;
+  
+    .line1 {
+      display: flex;
+      justify-content: center;
+  
+      ul {
+        list-style-type: none;
+        display: flex;
+  
+        li {
+          padding: 30px 20px;
+        }
+      }
+    }
+  
+    .line2 {
+      img {
+        padding-right: 15px;
+      }
+    }
+    .line3 {
+      margin-top: 20px;
+    }
+}
+
+@mixin gallery_cars{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    section {
+      border-radius: 10px;
+      background-color: #e5ddc5;
+      width: 350px;
+      height: auto;
+      margin-bottom: 25px;
+      margin-right: 15px;
+
+      img {
+        border-radius: 10px;
+        width: 100%;
+       height: 210px;
+        padding: 10px;
+      }
+
+      .description {
+        padding: 8px 10px;
+
+        p {
+          text-align: left;
+          font-family: $FiraSans;
+        }
+        .name_moto{
+          font-weight: bold;
+        }
+      }
+    }
+}

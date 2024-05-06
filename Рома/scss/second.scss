@@ -1,0 +1,153 @@
+@import "./variables.scss", "./mixin.scss";
+.catalog{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .head_catalog{
+        margin-top: 60px;
+        font-family: $IntroDemo_BLack;
+        font-size: 32px;
+    }
+    .block_with_cards_of_moto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+        text-align: center;
+        .text_up {
+          font-family: $IntroDemo_BLack;
+          font-size: 32px;
+          padding-bottom: 25px;
+        }
+      
+        .gallery_of_cars {
+          @include gallery_cars;
+        }
+      .buttons_gallery{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .button_more, .buttonsBuy{
+          cursor: pointer;
+        padding: 11px 20px;
+        width: 199px;
+        height: 40px;
+        background: #ff8080;
+        border-radius: 15px;
+        font-family: $IntroDemo_BLack;
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+      .buttonsBuy {
+        margin-left: 10px;
+      }
+    }
+      }       
+}
+.block_promotion{
+    margin-top: 80px;
+    text-align: center;
+.first_text, .second_text{
+    font-family: $IntroDemo_BLack;
+    font-size: 32px;
+}
+.third_text{
+height: 145px;
+font-weight: 400;
+font-size: 18px;
+    margin-top: 35px;
+    line-height: 160%;
+    font-family: $FiraSans;
+}
+}
+
+@media (max-width:1024px){
+    .catalog .block_with_cards_of_moto {
+        .gallery_of_cars {
+          justify-content: center;
+          section{
+            width:310px;
+          }
+        }
+        .buttons_gallery{
+          .buttonsBuy{
+            margin-left: 0;
+          }
+        }
+      }
+      .block_promotion img{
+        margin-top: 60px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+@media (max-width:768px){
+    main{
+        padding: 0;
+    }
+    .catalog .block_with_cards_of_moto {
+        .gallery_of_cars {
+          section{
+            width:270px;
+          }
+        }
+      }
+    .third_text
+    {
+        width: 100%;
+    }    
+    .block_promotion img{
+        margin-top: 190px;
+    } 
+    
+}
+@media (max-width:630px){
+  .catalog .block_with_cards_of_moto {
+    .gallery_of_cars {
+      section{
+        width:250px;
+      }
+    }
+  }
+}
+@media (max-width:580px){
+    .catalog .block_with_cards_of_moto {
+        .gallery_of_cars {
+            section{
+              width: 80%;
+              margin-right: 9px;
+              img{
+                height: 260px;
+              }
+            }
+          }
+      }
+      .block_promotion img{
+        padding: 10px;
+      }
+}
+
+@media (max-width:440px){
+    .catalog .block_with_cards_of_moto {
+        .gallery_of_cars {
+          section{
+       width: 100%;
+            margin-right: 0;
+            img{
+              height: 210px;
+            }
+          }
+        }
+      }
+      .buttons_gallery{
+        flex-direction: column;
+        .buttonsBuy{
+          margin-top: 5px;
+        }
+      }
+      .block_promotion img{
+        margin-top: 290px;
+      }
+    }

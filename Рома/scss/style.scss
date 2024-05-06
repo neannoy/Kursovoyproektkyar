@@ -1,0 +1,259 @@
+@import "./variables.scss", "./mixin.scss";
+@font-face {
+    font-family: "IntroDemo_BlackCAPS";
+    src: url(/fonts/Intro/IntroDemo-BlackCAPS.otf);
+  }
+  @font-face {
+    font-family: "IntroDemoСond_LightCAPS";
+    src: url(/fonts/Intro/IntroDemoCond-LightCAPS.otf);
+  }
+  @font-face {
+    font-family: "Inter-Black";
+    src: url(/fonts/Inter/static/Inter-Black.ttf);
+  }
+  @font-face {
+    font-family: "Inter-SemiBold";
+    src: url(/fonts/Inter/static/Inter-SemiBold.ttf);
+  }
+  
+  @font-face {
+    font-family: "FiraSans_Regular";
+    src: url(/fonts/Fira_Sans/FiraSans-Regular.ttf);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+html.noscroll{
+  overflow: hidden;
+}
+  body {
+    overflow-x: hidden;
+    background-color: $background_color_main;
+  }
+  main{
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+  header {
+    background-color:$background_color_header;
+  }
+  a{
+    text-decoration: none;
+    color:inherit;
+  }
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10;
+    margin-right: 30px;
+  }
+  .line {
+    width: 100%;
+    height: 4px;
+    background-color: black;
+  }
+
+  .nav-menu {
+    font-family: $IntroDemo_BLack;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+  }
+  
+  .logo {
+    box-sizing: border-box;
+    width: 260px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    svg{
+      padding: 10px;
+    }
+  }
+
+  .points {
+    @include points
+  }
+
+  
+  footer {
+  @include footer_mix
+  }
+
+  .modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 650px;
+    overflow: auto;
+}
+.content {
+  background-color: #e5ddc5;
+  margin: 10% auto;
+  padding: 20px;
+  width: 90%;
+    max-width: 450px;
+  border: 1px solid #888;
+  border-radius: 20px;
+}
+.button_close1, .button_close2 {
+    color: black;
+    float: right;
+    font-size: 33px;
+    font-weight: bold;
+  &:hover,
+  &:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+form {
+  background-color: #e5ddc5;
+    border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+  .Zagol, .subtitle {
+    color: black;
+    font-family:  $IntroDemo_BLack;
+    font-size: 150%;
+    margin-top: 30px;
+  }
+}
+.container_in {
+  border-radius: 20px;
+  background-color: #f1eedc;
+  height: 50px;
+  position: relative;
+  width: 100%;
+  margin-top: 15px
+}
+.input {
+  background-color: inherit;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: black;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  border: none;
+}
+.placeholder {
+  color:black;
+  border-radius: 12px;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+}
+.submit {
+  background-color: #fa0202;
+  border-radius: 12px;
+  box-sizing: border-box;
+  color: #eee;
+  border: 0;
+  cursor: pointer;
+  font-size: 15px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+  @media (max-width:790px){
+    .nav-menu {
+      position: relative;
+    }
+    .logo{
+      svg{
+        padding: 5px;
+      }
+    }
+    .hamburger-menu {
+      display: flex;
+      cursor: pointer;
+    }
+    .points {
+      display: flex;
+      flex-direction: column;
+    }
+    .points_menu {
+      z-index: 4;
+      position: fixed;
+      right: -100%;
+      height: 100vh;
+      top: 114px;
+      flex-direction: column;
+      background-color: #f1eedc;
+      width: 100%;
+      transition: 0.3s;
+      &.open{
+        right: 0 !important;
+        display: block;
+      }
+  }
+  
+  
+    .hamburger-menu.open .line {
+      &:nth-child(2) {
+        opacity: 0;
+      }
+  
+      &:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+  
+      &:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  @media (max-width:580px){
+    footer {
+      display:flex;
+      height: auto;
+      padding: 10px;
+      flex-direction: column;
+      .line1 ul
+      {
+        display: flex;
+        flex-direction: column;
+        li{
+          text-align: center;
+          padding: 10px;
+          &:last-child{
+              padding-bottom: 30px;
+          }
+      }
+      } 
+    }
+  }
+  @media (max-width:440px){
+      .line1 ul{
+        display: flex;
+        flex-direction: column;
+      }
+      .nav-menu{
+        margin-right: 0;
+      }
+}
